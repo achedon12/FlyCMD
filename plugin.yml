@@ -1,5 +1,5 @@
 name: flyCMD
 version: 0.1
-api: [3.0.0]
+api: [4.0.0]
 main: achedon12\flyCMD\Fly
 author: Achedon12
