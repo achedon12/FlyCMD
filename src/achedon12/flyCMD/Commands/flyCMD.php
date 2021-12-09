@@ -2,11 +2,14 @@
 
 namespace achedon12\flyCMD\Commands;
 
+use achedon12\flyCMD\Fly;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
 
-class flyCMD extends Command{
+class flyCMD extends Command implements PluginOwned {
 
     public function __construct(string $name, string $description = "", string $usageMessage = null, array $aliases = [])
     {
@@ -30,5 +33,9 @@ class flyCMD extends Command{
         }else{
             $sender->sendMessage("Please run this command in game");
         }
+    }
+
+    public function getOwningPlugin() : Plugin{
+        return Fly::getInstance();
     }
 }
